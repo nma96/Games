@@ -18,7 +18,8 @@ def requirement1(deck):
     return newdeck.index(1) + 1
 
 
-def requirement2(deck, count, deckCopy):
+def requirement2(deck, count):
+    deckCopy = deck
     while True:
         count += 1
         newdeck = []
@@ -49,13 +50,12 @@ def main():
 
     DeckSize = 52
     deck = [(i + 1) for i in range(DeckSize)]
-    deckCopy = deck
     count = 0
 
     print("\n After 7 shuffles, the 1st card is at {} position"
           .format(requirement1(deck)))
     print("\n For the top card to becom the bottom card, one must shuffle {} times"
-          .format(requirement2(deck, count, deckCopy)))
+          .format(requirement2(deck, count)))
     print("\n The first and last cards touch after {} shuffles"
           .format(requirement3(deck, count)))
 
